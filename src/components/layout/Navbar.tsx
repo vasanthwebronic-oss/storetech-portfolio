@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { JSX, useState } from "react";
+import {  useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -21,13 +21,13 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        {/* grid: left logo | center nav | right CTA */}
-        <div className="grid grid-cols-3 items-center h-20"> {/* h-20 = 5rem to match screenshot spacing */}
-          {/* LEFT: logo */}
+        
+        <div className="grid grid-cols-3 items-center h-20"> 
+          
           <div className="flex items-center">
             <Link href="/#hero" aria-label="StoreTech Home" className="inline-flex items-center">
               <div className="flex items-center justify-center rounded-md  px-3 py-2"> 
-                {/* the white box with inner black logo */}
+              
                 <div className="bg-black rounded-sm px-2 py-1">
                   <Image
                     src="/assets/images/storetech-logo-white.png"
