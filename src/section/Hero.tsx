@@ -7,11 +7,11 @@ export default function Hero() {
       id="hero"
       className="relative min-h-[80vh] flex items-center justify-center bg-linear-to-br from-[#0b1114] via-[#050607] to-[#071017] text-white py-20"
     >
-      {/* overlays */}
-      <div className="absolute inset-0 pointer-events-none z-0">
+      {/* overlays  SOME ISSUES NEED TO BE SOLVED*/} 
+      {/* <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/60" />
         <div className="absolute -inset-x-48 top-0 h-48 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.02),transparent_10%)]" />
-      </div>
+      </div> */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         {/* Headline */}
@@ -36,7 +36,7 @@ export default function Hero() {
 
         {/* CTA container */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          {/* Primary CTA - consistent height, bold */}
+          
           <a
             href="tel:+917200088500"
             aria-label="Schedule a demo"
@@ -46,7 +46,7 @@ export default function Hero() {
             Schedule a Demo
           </a>
 
-          {/* Secondary CTA - outline, same height */}
+          
           <a
             href="https://opalescent-hyssop-f3f.notion.site/2613cb01fb4a8069a9bec4a5dfab07bd?v=2b93cb01fb4a805da119000c28dbb09a"
             target="_blank"
