@@ -34,9 +34,9 @@ export default function RootLayout({
           <Navbar />
         </header>
         <main className="pt-16">{children}</main>
-        {/* <footer style={{ background: "#000", padding: "3rem" }}>
+        <footer style={{ background: "#000", padding: "3rem" }}>
           <Footer />
-        </footer> */}
+        </footer>
       </body>
     </html>
   );

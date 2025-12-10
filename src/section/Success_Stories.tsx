@@ -15,7 +15,6 @@ export default function SuccessStories() {
 
         {/* Cards row */}
         <div className="relative cards-row flex flex-col md:flex-row gap-8">
-          {/* Center floating icon */}
           <div
             className="center-icon-wrapper hidden md:flex items-center justify-center"
             title="View Details"
@@ -165,7 +164,7 @@ export default function SuccessStories() {
 
           {/* Case card 2  */}
           <article className="case-card dark-theme bg-[#050505]  overflow-hidden shadow-lg flex-1 transition-transform ">
-            <div className="card-header-image logo-area h-48 flex items-center justify-center">
+            <div className="card-header-image logo-area h-48 flex items-center justify-center hover:scale">
               <svg
                 className="sun-logo w-40 h-auto"
                 viewBox="0 0 200 100"

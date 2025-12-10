@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Benefits() {
   return (
     <section id="benefits" className="bg-gray-50 py-20">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 sm:px-10 lg:px-80">
         
         {/* Heading */}
         <div className="text-center mb-16">

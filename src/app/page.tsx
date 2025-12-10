@@ -30,13 +30,13 @@ export default function page() {
     <Products />
     <Benefits />
     <Success_Stories />
-    {/* These are the components  yet to be designed with tailwind CSS */}
-    {/* <Partners />
+    
+     <Partners />
     <Industries />
     <Integration />
-    <Support />
-    <Faq />
-    <Contact /> */}
+  <Support />
+     <Faq />
+    <Contact /> 
     
    
     </>

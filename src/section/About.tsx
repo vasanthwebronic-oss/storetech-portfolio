@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function About() {
   return (
     <section id="about" className="py-20 bg-white text-black">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-8">
         {/* Title */}
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-start md:text-center mb-6">
+        <h2 className="text-4xl sm:text-5xl font-bold text-start  mb-6">
           The Autonomous Retail
           Ecosystem
         </h2>
@@ -23,7 +23,7 @@ export default function About() {
         </p>
 
         {/* Quote Box */}
-        <div className="bg-black text-white p-6 sm:p-8 rounded-lg mb-10">
+        <div className="bg-black text-white px-6 py-10  rounded-lg mb-10">
           <p className="italic text-lg leading-relaxed">
             “Success is no longer measured solely by sales per square foot, but
             by the ability to provide 24/7 accessibility, personalized
