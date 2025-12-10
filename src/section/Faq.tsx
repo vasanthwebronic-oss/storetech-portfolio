@@ -1,20 +1,26 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+
+import FaqItem from "@/components/common/FaqItem";
+import { useEffect, useRef, useState } from "react";
+
+type FaqEntry = {
+  q: string;
+  a: string;
+};
 
 export default function Faq() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  
-  const contentRefs = useRef([]);
+  const contentRefs = useRef<Array<HTMLDivElement | null>>([]);
 
-  const setRef = (el: HTMLDivElement | null, i: number) => {
+  const setContentRef = (el: HTMLDivElement | null, i: number) => {
     contentRefs.current[i] = el;
   };
 
   useEffect(() => {
     if (!contentRefs.current || contentRefs.current.length === 0) return;
 
-    const raf = requestAnimationFrame(() => {
+    const rafId = requestAnimationFrame(() => {
       for (let i = 0; i < contentRefs.current.length; i++) {
         const el = contentRefs.current[i];
         if (!el) continue;
@@ -27,14 +33,14 @@ export default function Faq() {
       }
     });
 
-    return () => cancelAnimationFrame(raf);
+    return () => cancelAnimationFrame(rafId);
   }, [openIndex]);
 
-  const toggleIndex = (i) => {
+  const toggleIndex = (i: number) => {
     setOpenIndex((prev) => (prev === i ? null : i));
   };
 
-  const FAQ_ITEMS = [
+  const FAQ_ITEMS: FaqEntry[] = [
     {
       q: "What makes StoreTech different from other retail solutions?",
       a: "StoreTech provides a comprehensive, modular ecosystem that seamlessly integrates hardware and software. Our AI-powered approach enables true automation, allowing businesses to operate 24/7 without on-site staff while maintaining security and personalized customer experiences.",
@@ -68,42 +74,15 @@ export default function Faq() {
 
         <div className="max-w-3xl mx-auto flex flex-col gap-4">
           {FAQ_ITEMS.map((item, i) => (
-            <div key={i} className="bg-white rounded-xl border border-gray-200 shadow-sm">
-              {/* Button */}
-              <button
-                type="button"
-                aria-expanded={openIndex === i}
-                onClick={() => toggleIndex(i)}
-                className="w-full p-5 flex justify-between items-center text-left"
-              >
-                <span className="font-semibold text-lg text-gray-900">{item.q}</span>
-
-                <svg
-                  className={`w-6 h-6 text-gray-700 transition-transform ${
-                    openIndex === i ? "rotate-180" : "rotate-0"
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <polyline
-                    points="6 9 12 15 18 9"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-
-              {/* Answer */}
-              <div
-                ref={(el) => setRef(el, i)}
-                className="overflow-hidden transition-[max-height] duration-300"
-                style={{ maxHeight: "0px" }}
-              >
-                <p className="px-5 pb-6 text-gray-700 leading-7">{item.a}</p>
-              </div>
-            </div>
+            <FaqItem
+              key={i}
+              index={i}
+              question={item.q}
+              answer={item.a}
+              isOpen={openIndex === i}
+              onToggle={toggleIndex}
+              setContentRef={setContentRef}
+            />
           ))}
         </div>
       </div>

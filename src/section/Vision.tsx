@@ -1,10 +1,31 @@
-import Image from "next/image";
+import VisionCard from "@/components/common/VisionCard";
 
 export default function Vision() {
+  const cards = [
+    {
+      iconSrc: "/assets/icons/intelligent-integration.svg",
+      title: "Intelligent Integration",
+      description:
+        "Every device connected in an intelligent network, creating a virtuous cycle of data and automation.",
+    },
+    {
+      iconSrc: "/assets/icons/cloud-computing.svg",
+      title: "Cloud Computing",
+      description:
+        "Scalable, flexible infrastructure that powers the ecosystem with secure, always-available services.",
+    },
+    {
+      iconSrc: "/assets/icons/ai-ml.svg",
+      title: "AI & Machine Learning",
+      description:
+        "Advanced algorithms that predict behavior, optimize operations, and personalize experiences.",
+    },
+  ];
+
   return (
     <section id="vision" className="bg-black text-white py-16">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-stretch-70% mb-14">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-14">
           Our Vision:{" "}
           <span className="text-[#37c659]">Redefining the Physical Space</span>
         </h2>
@@ -26,55 +47,15 @@ export default function Vision() {
           day, 365 days a year.
         </p>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Card 1 */}
-          <div className="p-6 bg-[#0f172a] rounded-xl border border-[#0f451b] min-h-[230px]">
-            <Image
-              src="/assets/icons/intelligent-integration.svg"
-              alt="Intelligent Integration Icon"
-              width={38}
-              height={38}
-              className="mb-3"
+          {cards.map((c) => (
+            <VisionCard
+              key={c.title}
+              iconSrc={c.iconSrc}
+              title={c.title}
+              description={c.description}
             />
-            <h4 className="text-lg font-bold mb-2">Intelligent Integration</h4>
-            <p className="text-gray-300 text-md leading-relaxed">
-              Every device connected in an intelligent network, creating a
-              virtuous cycle of data and automation.
-            </p>
-          </div>
-
-          {/* Card 2 */}
-          <div className="p-6 bg-[#0f172a] rounded-xl border border-[#0f451b] min-h-[230px]">
-            <Image
-              src="/assets/icons/cloud-computing.svg"
-              alt="Cloud Computing Icon"
-              width={38}
-              height={38}
-              className="mb-3"
-            />
-            <h4 className="text-lg font-bold mb-2">Cloud Computing</h4>
-            <p className="text-gray-300 text-md leading-relaxed">
-              Scalable, flexible infrastructure that powers the ecosystem with
-              secure, always-available services.
-            </p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="p-6 bg-[#0f172a] rounded-xl border border-[#0f451b] min-h-[230px]">
-            <Image
-              src="/assets/icons/ai-ml.svg"
-              alt="AI Machine Learning Icon"
-              width={38}
-              height={38}
-              className="mb-3"
-            />
-            <h4 className="text-lg font-bold mb-2">AI & Machine Learning</h4>
-            <p className="text-gray-300 text-md leading-relaxed">
-              Advanced algorithms that predict behavior, optimize operations,
-              and personalize experiences.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>

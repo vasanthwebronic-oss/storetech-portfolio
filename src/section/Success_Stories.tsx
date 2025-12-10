@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-
 export default function SuccessStories() {
   return (
     <section id="success-stories" className="py-20 bg-white">

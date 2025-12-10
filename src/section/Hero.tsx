@@ -1,14 +1,18 @@
-import Image from "next/image";
-
+import CTAButton from "@/components/common/CTAButton";
+import FeatureCard from "@/components/common/FeatureCard";
 
 export default function Hero() {
+  const features = [
+    { src: "/assets/icons/smart-automation.svg", title: "Smart Automation" },
+    { src: "/assets/icons/ai-security.svg", title: "AI Security" },
+    { src: "/assets/icons/24-7-operation.svg", title: "24/7 Operation" },
+  ];
+
   return (
     <section
       id="hero"
       className="relative min-h-[80vh] flex items-center justify-center bg-linear-to-br from-[#0b1114] via-[#050607] to-[#071017] text-white py-10"
     >
-     
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         {/* Headline */}
         <h1 className="leading-tight mb-6">
@@ -32,52 +36,29 @@ export default function Hero() {
 
         {/* CTA container */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          
-          <a
+          <CTAButton
             href="tel:+917200088500"
-            aria-label="Schedule a demo"
-            className="inline-flex items-center group justify-center h-12 px-6 rounded-lg bg-[#37c659] text-black font-semibold shadow-sm hover:text-white hover:bg-black  hover:border hover:border-white active:translate-y-1px transition transform focus:outline-none focus:ring-4 focus:ring-[#37c659]/25"
-            role="button"
+            ariaLabel="Schedule a demo"
+            variant="primary"
+            className="group"
           >
             <span className="group-hover:text-white">Schedule a Demo</span>
-            
-          </a>
+          </CTAButton>
 
-          
-          <a
+          <CTAButton
             href="https://opalescent-hyssop-f3f.notion.site/2613cb01fb4a8069a9bec4a5dfab07bd?v=2b93cb01fb4a805da119000c28dbb09a"
+            ariaLabel="Download brochure"
             target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download brochure"
-            className="inline-flex items-center justify-center h-12 px-6 group rounded-lg bg-transparent border-2 border-white/80 text-white font-semibold hover:bg-white hover:text-black active:translate-y-1px transition transform focus:outline-none focus:ring-4 focus:ring-white/20"
-            role="button"
+            variant="outline"
           >
-           <span className="group-hover:text-black"> Download Brochure</span> 
-          </a>
+            <span className="group-hover:text-black">Download Brochure</span>
+          </CTAButton>
         </div>
 
         {/* Feature cards */}
-        <div className="mt-6 grid grid-cols-1  sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {[
-            {
-              src: "/assets/icons/smart-automation.svg",
-              title: "Smart Automation",
-            },
-            { src: "/assets/icons/ai-security.svg", title: "AI Security" },
-            {
-              src: "/assets/icons/24-7-operation.svg",
-              title: "24/7 Operation",
-            },
-          ].map((f) => (
-            <div
-              key={f.title}
-              className="flex flex-col items-center text-center  py-6 rounded-lg bg-white/5 backdrop-blur-sm border border-[rgba(52,211,153,0.12)] transition-transform "
-            >
-              <div className="mb-4  h-12  flex items-center justify-center">
-                <Image src={f.src} alt={f.title} width={40} height={40} />
-              </div>
-              <h3 className="text-white font-semibold text-lg">{f.title}</h3>
-            </div>
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {features.map((f) => (
+            <FeatureCard key={f.title} src={f.src} title={f.title} />
           ))}
         </div>
       </div>

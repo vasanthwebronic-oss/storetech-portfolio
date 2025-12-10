@@ -56,10 +56,10 @@ export default function Workflow() {
 
                 {/* right column: content */}
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2 mt-2">
                     {s.title}
                   </h3>
-                  <p className="text-gray-600">{s.desc}</p>
+                  <p className="text-gray-600 text-lg ">{s.desc}</p>
                 </div>
               </div>
             ))}

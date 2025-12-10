@@ -21,7 +21,8 @@ export default function Partners() {
 
         {/* Subtitle */}
         <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-          Trusted by industry leaders who rely on our autonomous retail ecosystem
+          Trusted by industry leaders who rely on our autonomous retail
+          ecosystem
         </p>
 
         {/* Logos grid */}

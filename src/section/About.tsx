@@ -1,13 +1,30 @@
-import Image from "next/image";
+import AboutCard from "@/components/common/AboutCard";
 
 export default function About() {
+  const cards = [
+    {
+      src: "/assets/icons/modular-ecosystem.svg",
+      title: "Modular Ecosystem",
+      text: "Start small and scale seamlessly as your business grows",
+    },
+    {
+      src: "/assets/icons/cross-industry.svg",
+      title: "Cross-Industry",
+      text: "Solutions extend beyond retail to hospitality, corporate, and residential sectors",
+    },
+    {
+      src: "/assets/icons/ai-powered.svg",
+      title: "AI-Powered",
+      text: "Machine learning and IoT create predictive, automated experiences",
+    },
+  ];
+
   return (
     <section id="about" className="py-20 bg-white text-black">
       <div className="max-w-5xl mx-auto px-8">
         {/* Title */}
-        <h2 className="text-4xl sm:text-5xl font-bold text-start  mb-6">
-          The Autonomous Retail
-          Ecosystem
+        <h2 className="text-4xl sm:text-5xl font-bold text-start mb-6">
+          The Autonomous Retail Ecosystem
         </h2>
 
         {/* Paragraphs */}
@@ -23,7 +40,7 @@ export default function About() {
         </p>
 
         {/* Quote Box */}
-        <div className="bg-black text-white px-6 py-10  rounded-lg mb-10">
+        <div className="bg-black text-white px-6 py-10 rounded-lg mb-10">
           <p className="italic text-lg leading-relaxed">
             “Success is no longer measured solely by sales per square foot, but
             by the ability to provide 24/7 accessibility, personalized
@@ -56,46 +73,13 @@ export default function About() {
 
         {/* About Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
-          {[
-            {
-              src: "/assets/icons/modular-ecosystem.svg",
-              title: "Modular Ecosystem",
-              text: "Start small and scale seamlessly as your business grows",
-            },
-            {
-              src: "/assets/icons/cross-industry.svg",
-              title: "Cross-Industry",
-              text: "Solutions extend beyond retail to hospitality, corporate, and residential sectors",
-            },
-            {
-              src: "/assets/icons/ai-powered.svg",
-              title: "AI-Powered",
-              text: "Machine learning and IoT create predictive, automated experiences",
-            },
-          ].map((item) => (
-            <div
+          {cards.map((item) => (
+            <AboutCard
               key={item.title}
-              className="border-2 border-[#37c659] rounded-xl p-6 min-h-[300px] flex flex-col "
-            >
-              {/* Icon */}
-              <Image
-                src={item.src}
-                alt={item.title}
-                width={40}
-                height={40}
-                className="mb-4"
-              />
-
-              {/* Title */}
-              <h4 className="text-lg font-bold text-black mb-3">
-                {item.title}
-              </h4>
-
-              {/* Body Text */}
-              <p className="text-gray-700 leading-relaxed text-base">
-                {item.text}
-              </p>
-            </div>
+              src={item.src}
+              title={item.title}
+              text={item.text}
+            />
           ))}
         </div>
       </div>
