@@ -28,17 +28,17 @@ export default function Support() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <SupportFeatureCard
-              iconSrc="/assets/icons/assistance.svg"
+              iconSrc="./assets/icons/assistance.svg"
               title="Round-the-Clock Assistance"
               description="Phone, email, and chat support whenever you need it"
             />
             <SupportFeatureCard
-              iconSrc="/assets/icons/monitoring.svg"
+              iconSrc="./assets/icons/monitoring.svg"
               title="Proactive Monitoring"
               description="Command Center app provides real-time alerts and monitoring"
             />
             <SupportFeatureCard
-              iconSrc="/assets/icons/support-team.svg"
+              iconSrc="./assets/icons/support-team.svg"
               title="Dedicated Support Team"
               description="Expert technicians who understand your business"
             />
@@ -56,19 +56,19 @@ export default function Support() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               <SupportInfoCard
-                iconSrc="/assets/icons/implementation.svg"
+                iconSrc="./assets/icons/implementation.svg"
                 title="Comprehensive Implementation"
                 description="End-to-end support from design to deployment"
               />
 
               <SupportInfoCard
-                iconSrc="/assets/icons/scalability.svg"
+                iconSrc="./assets/icons/scalability.svg"
                 title="Cloud-Based Scalability"
                 description="Easily add new stores, devices, and users as you grow"
               />
 
               <SupportInfoCard
-                iconSrc="/assets/icons/partnership.svg"
+                iconSrc="./assets/icons/partnership.svg"
                 title="Ongoing Partnership"
                 description="Continuous training and education for your team"
               />

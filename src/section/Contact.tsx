@@ -25,21 +25,21 @@ export default function Contact() {
           <div className="grid gap-6 md:grid-cols-3 mb-12">
             <ContactCard
               href="tel:7200088500"
-              imgSrc="/assets/icons/calendar.svg"
+              imgSrc="./assets/icons/calendar.svg"
               title="Schedule a Demo"
               text="See our ecosystem in action with a personalized demonstration"
             />
 
             <ContactCard
               href="tel:7200088500"
-              imgSrc="/assets/icons/phone-footer.svg"
+              imgSrc="./assets/icons/phone-footer.svg"
               title="Get in Touch"
               text="Speak with our experts about your specific needs"
             />
 
             <ContactCard
               href="tel:7200088500"
-              imgSrc="/assets/icons/rocket.svg"
+              imgSrc="./assets/icons/rocket.svg"
               title="Start Your Journey"
               text="Begin your transformation with a modular approach"
             />
