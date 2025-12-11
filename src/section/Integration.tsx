@@ -36,10 +36,10 @@ export default function Integration() {
 
   return (
     <section id="integration" className="py-20 bg-[#37c659] text-black">
-      <div className="max-w-6xl mx-auto px-10">
+      <div className="max-w-6xl mx-auto px-3 md:px-10">
         {/* Header */}
         <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+          <h2 className="text-4xl  md:text-5xl  font-bold tracking-tight">
             Synergy in Action: The Power of Integration
           </h2>
           <p className="mt-4 text-lg text-[#071b47]/70 max-w-3xl mx-auto">

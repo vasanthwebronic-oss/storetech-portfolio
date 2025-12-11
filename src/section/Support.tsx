@@ -5,7 +5,7 @@ export default function Support() {
   return (
     <section id="support" className="pt-24 pb-28">
       <div className="container mx-auto px-4">
-        <div className="w-full text-center mb-12">
+        <div className="w-full text-center lg:px-50 mb-12">
           <h2 className="font-bold text-black/95 px-3 text-[2.5rem] lg:text-[3rem]">
             Our Promise:
             <span className="text-[#37c659]"> World-Class Support &amp;</span>
@@ -25,7 +25,7 @@ export default function Support() {
             </p>
           </div>
 
-          {/* Dark feature cards */}
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <SupportFeatureCard
               iconSrc="/assets/icons/assistance.svg"

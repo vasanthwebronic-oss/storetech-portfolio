@@ -84,7 +84,7 @@ export default function Navbar() {
             </ul>
           </nav>
 
-          {/* CTA + Mobile Menu Toggle */}
+          
           <div className="ml-auto flex items-center justify-end gap-4">
             <button
               onClick={() => scrollToSection("contact")}

@@ -35,13 +35,11 @@ export default function Workflow() {
           </p>
         </div>
 
-        {/* timeline */}
         <div className="relative">
           <div className="space-y-6">
             {steps.map((s, idx) => (
               <div key={s.id} className="flex items-start gap-3">
                 <div className="flex flex-col items-center w-28 md:w-24">
-                  {/* circle */}
                   <div
                     className="w-16 h-16 rounded-full bg-[#37c659] flex items-center justify-center text-black font-semibold text-2xl"
                     aria-hidden
@@ -54,7 +52,6 @@ export default function Workflow() {
                   )}
                 </div>
 
-                {/* right column: content */}
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2 mt-2">
                     {s.title}

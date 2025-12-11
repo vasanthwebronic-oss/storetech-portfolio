@@ -35,14 +35,14 @@ export default function Hero() {
         </p>
 
         {/* CTA container */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
           <CTAButton
             href="tel:+917200088500"
             ariaLabel="Schedule a demo"
             variant="primary"
-            className="group"
+            className=""
           >
-            <span className="group-hover:text-white">Schedule a Demo</span>
+            <span className="">Schedule a Demo</span>
           </CTAButton>
 
           <CTAButton
@@ -50,8 +50,9 @@ export default function Hero() {
             ariaLabel="Download brochure"
             target="_blank"
             variant="outline"
+            className=""
           >
-            <span className="group-hover:text-black">Download Brochure</span>
+            <span >Download Brochure</span>
           </CTAButton>
         </div>
 
