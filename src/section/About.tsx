@@ -3,17 +3,17 @@ import AboutCard from "@/components/common/AboutCard";
 export default function About() {
   const cards = [
     {
-      src: "/assets/icons/modular-ecosystem.svg",
+      src: "./assets/icons/modular-ecosystem.svg",
       title: "Modular Ecosystem",
       text: "Start small and scale seamlessly as your business grows",
     },
     {
-      src: "/assets/icons/cross-industry.svg",
+      src: "./assets/icons/cross-industry.svg",
       title: "Cross-Industry",
       text: "Solutions extend beyond retail to hospitality, corporate, and residential sectors",
     },
     {
-      src: "/assets/icons/ai-powered.svg",
+      src: "./assets/icons/ai-powered.svg",
       title: "AI-Powered",
       text: "Machine learning and IoT create predictive, automated experiences",
     },
