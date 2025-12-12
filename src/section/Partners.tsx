@@ -4,13 +4,13 @@ import Image from "next/image";
 
 export default function Partners() {
   const partners = [
-    { src: "/assets/logo-24-sju-white-bg.png", alt: "24SJU alt" },
-    { src: "/assets/slattens.jpg", alt: "Slattens" },
-    { src: "/assets/24sju-se.png", alt: "24SJU" },
-    { src: "/assets/kornhall.svg", alt: "Kornhalls" },
-    { src: "/assets/Norlandia.png", alt: "Norlandia" },
-    { src: "/assets/posten logo.png", alt: "Posten" },
-    { src: "/assets/MatMedSmak logo.png", alt: "Mat Med Smak" },
+    { src: "./assets/logo-24-sju-white-bg.png", alt: "24SJU alt" },
+    { src: "./assets/slattens.jpg", alt: "Slattens" },
+    { src: "./assets/24sju-se.png", alt: "24SJU" },
+    { src: "./assets/kornhall.svg", alt: "Kornhalls" },
+    { src: "./assets/Norlandia.png", alt: "Norlandia" },
+    { src: "./assets/posten logo.png", alt: "Posten" },
+    { src: "./assets/MatMedSmak logo.png", alt: "Mat Med Smak" },
   ];
 
   const marqueeRef = useRef<HTMLDivElement | null>(null);

@@ -7,9 +7,9 @@ import FeatureCard from "@/components/common/FeatureCard";
 
 export default function Hero() {
   const features = [
-    { src: "/assets/icons/smart-automation.svg", title: "Smart Automation" },
-    { src: "/assets/icons/ai-security.svg", title: "AI Security" },
-    { src: "/assets/icons/24-7-operation.svg", title: "24/7 Operation" },
+    { src: "./assets/icons/smart-automation.svg", title: "Smart Automation" },
+    { src: "./assets/icons/ai-security.svg", title: "AI Security" },
+    { src: "./assets/icons/24-7-operation.svg", title: "24/7 Operation" },
   ];
 
   return (

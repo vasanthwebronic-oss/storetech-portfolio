@@ -11,32 +11,32 @@ type FeatureItem = {
 export default function Features() {
   const features: FeatureItem[] = [
     {
-      src: "/assets/icons/smart-automation.svg",
+      src: "./assets/icons/smart-automation.svg",
       title: "Smart Automation",
       desc: "IoT, AI, and mobile technologies transform retail environments",
     },
     {
-      src: "/assets/icons/ai-security.svg",
+      src: "./assets/icons/ai-security.svg",
       title: "AI Security",
       desc: "Advanced AI-powered security monitors your space 24/7",
     },
     {
-      src: "/assets/icons/24-7-operation.svg",
+      src: "./assets/icons/24-7-operation.svg",
       title: "24/7 Operation",
       desc: "Generate revenue around the clock without on-site staff",
     },
     {
-      src: "/assets/icons/cloud-computing.svg",
+      src: "./assets/icons/cloud-computing.svg",
       title: "Cloud Computing",
       desc: "Scalable infrastructure with secure, always-available services",
     },
     {
-      src: "/assets/icons/ai-ml.svg",
+      src: "./assets/icons/ai-ml.svg",
       title: "AI & Machine Learning",
       desc: "Predictive algorithms optimize operations and personalize experiences",
     },
     {
-      src: "/assets/icons/modular-ecosystem.svg",
+      src: "./assets/icons/modular-ecosystem.svg",
       title: "Modular Ecosystem",
       desc: "Start small and scale seamlessly as your business grows",
     },

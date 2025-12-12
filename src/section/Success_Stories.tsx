@@ -66,7 +66,7 @@ export default function SuccessStories() {
           <article className=" text-white">
             <div className="h-52 bg-[#050505] flex group items-center justify-center border-b border-black">
               {/* <TanluxLogo size={140} color="#C5A059" className="tanlux-logo group-hover:scale-105 transition-all duration-500 ease-in" /> */}
-             <Image src="/assets/images/tanluxlogo.png" alt="Tanlux Logo" height={160} width={160} className="group-hover:scale-105 transition-all duration-100 ease-in"/>
+             <Image src="./assets/images/tanluxlogo.png" alt="Tanlux Logo" height={160} width={160} className="group-hover:scale-105 transition-all duration-100 ease-in"/>
             </div>
 
             {/* BODY */}

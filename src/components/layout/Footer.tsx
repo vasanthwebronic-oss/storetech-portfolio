@@ -30,7 +30,7 @@ export default function Footer() {
             >
               <div className="logo-icon-bg rounded-sm flex items-center justify-center bg-black">
                 <Image
-                  src="/assets/images/storetech-logo-white.png"
+                  src="./assets/images/storetech-logo-white.png"
                   alt="StoreTech Logo"
                   width={160}
                   height={50}
@@ -70,7 +70,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-3 mb-3">
               <Image
-                src="/assets/icons/mail.svg"
+                src="./assets/icons/mail.svg"
                 alt="Mail Icon"
                 width={24}
                 height={24}
@@ -85,7 +85,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-3 mb-3">
               <Image
-                src="/assets/icons/phone-footer.svg"
+                src="./assets/icons/phone-footer.svg"
                 alt="Phone Icon"
                 width={24}
                 height={24}
@@ -100,7 +100,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-3">
               <Image
-                src="/assets/icons/globe.svg"
+                src="./assets/icons/globe.svg"
                 alt="Website Icon"
                 width={24}
                 height={24}

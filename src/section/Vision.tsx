@@ -5,19 +5,19 @@ import VisionCard from "@/components/common/VisionCard";
 export default function Vision() {
   const cards = [
     {
-      iconSrc: "/assets/icons/intelligent-integration.svg",
+      iconSrc: "./assets/icons/intelligent-integration.svg",
       title: "Intelligent Integration",
       description:
         "Every device connected in an intelligent network, creating a virtuous cycle of data and automation.",
     },
     {
-      iconSrc: "/assets/icons/cloud-computing.svg",
+      iconSrc: "./assets/icons/cloud-computing.svg",
       title: "Cloud Computing",
       description:
         "Scalable, flexible infrastructure that powers the ecosystem with secure, always-available services.",
     },
     {
-      iconSrc: "/assets/icons/ai-ml.svg",
+      iconSrc: "./assets/icons/ai-ml.svg",
       title: "AI & Machine Learning",
       description:
         "Advanced algorithms that predict behavior, optimize operations, and personalize experiences.",
