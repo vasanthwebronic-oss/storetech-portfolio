@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 
 
 
@@ -17,9 +18,9 @@ export default function SuccessStories() {
 
           <article className="bg-white border-r border-gray-200">
            
-            <div className="relative h-52 bg-[#cfe3f6] overflow-hidden">
+            <div className="relative h-52 bg-[#cfe3f6] group overflow-hidden">
              
-              <div
+              <div 
                 style={{
                   position: "absolute",
                   inset: 0,
@@ -29,10 +30,10 @@ export default function SuccessStories() {
                 }}
               />
 
-              <Pin top="52%" left="28%" size={28} />
-              <Pin top="28%" left="43%" size={28} />
-              <Pin top="40%" left="52%" size={28} />
-              <Pin top="26%" left="63%" size={28} />
+              <Pin className="group-hover:animate-bounce " top="52%" left="28%" size={28} />
+              <Pin className="group-hover:animate-bounce " top="28%" left="43%" size={28} />
+              <Pin className="group-hover:animate-bounce " top="40%" left="52%" size={28} />
+              <Pin className="group-hover:animate-bounce " top="26%" left="63%" size={28} />
             </div>
 
             {/* BODY */}
@@ -63,8 +64,9 @@ export default function SuccessStories() {
 
 
           <article className=" text-white">
-            <div className="h-52 bg-[#050505] flex items-center justify-center border-b border-black">
-              <TanluxLogo size={140} color="#C5A059" className="tanlux-logo" />
+            <div className="h-52 bg-[#050505] flex group items-center justify-center border-b border-black">
+              {/* <TanluxLogo size={140} color="#C5A059" className="tanlux-logo group-hover:scale-105 transition-all duration-500 ease-in" /> */}
+             <Image src="/assets/images/tanluxlogo.png" alt="Tanlux Logo" height={160} width={160} className="group-hover:scale-105 transition-all duration-100 ease-in"/>
             </div>
 
             {/* BODY */}
@@ -129,19 +131,19 @@ export default function SuccessStories() {
           transition: transform 0.25s ease, filter 0.25s ease;
           filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.2));
         }
-        .map-pin:hover {
-          transform: translate(-50%, -110%) scale(1.18);
-          filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.28));
-        }
+        // .map-pin:hover {
+        //   transform: translate(-50%, -110%) scale(1.18);
+        //   filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.28));
+        // }
 
         /* TANLUX LOGO HOVER */
         .tanlux-logo {
           transition: transform 0.35s ease, filter 0.35s ease;
         }
-        .tanlux-logo:hover {
-          transform: scale(1.08) rotate(-3deg);
-          filter: drop-shadow(0 6px 10px rgba(197, 160, 89, 0.35));
-        }
+        // .tanlux-logo:hover {
+        //   transform: scale(1.08) rotate(-3deg);
+        //   filter: drop-shadow(0 6px 10px rgba(197, 160, 89, 0.35));
+        // }
       `}</style>
     </section>
   );
@@ -152,13 +154,15 @@ const Pin = ({
   top,
   left,
   size = 26,
+  className,
 }: {
   top: string;
   left: string;
+  className?:string
   size?: number;
 }) => (
   <svg
-    className="map-pin"
+    className={`map-pin  ${className}`} 
     width={size}
     height={(size * 36) / 24}
     viewBox="0 0 24 24"

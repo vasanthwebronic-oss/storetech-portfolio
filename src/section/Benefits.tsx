@@ -27,7 +27,7 @@ export default function Benefits() {
           {/* 1 */}
           <div className="flex items-start gap-4">
             <Image
-              src="./assets/icons/AI-Powered HD.svg"
+              src="/assets/icons/AI-Powered HD.svg"
               alt="AI Powered"
               width={28}
               height={28}
@@ -40,7 +40,7 @@ export default function Benefits() {
           {/* 2 */}
           <div className="flex items-start gap-4">
             <Image
-              src="./assets/icons/Revenue Generation.svg"
+              src="/assets/icons/Revenue Generation.svg"
               alt="Revenue Generation"
               width={28}
               height={28}
@@ -53,7 +53,7 @@ export default function Benefits() {
           {/* 3 */}
           <div className="flex items-start gap-4">
             <Image
-              src="./assets/icons/Full-Service.svg"
+              src="/assets/icons/Full-Service.svg"
               alt="Full Service"
               width={28}
               height={28}
@@ -66,7 +66,7 @@ export default function Benefits() {
           {/* 4 */}
           <div className="flex items-start gap-4">
             <Image
-              src="./assets/icons/Real-Time IM.svg"
+              src="/assets/icons/Real-Time IM.svg"
               alt="Real Time Inventory"
               width={28}
               height={28}
@@ -79,7 +79,7 @@ export default function Benefits() {
           {/* 5 */}
           <div className="flex items-start gap-4">
             <Image
-              src="./assets/icons/ai-powered.svg"
+              src="/assets/icons/ai-powered.svg"
               alt="AI Monitoring"
               width={28}
               height={28}
@@ -92,7 +92,7 @@ export default function Benefits() {
           {/* 6 */}
           <div className="flex items-start gap-4">
             <Image
-              src="./assets/icons/scalability.svg"
+              src="/assets/icons/scalability.svg"
               alt="Scalability"
               width={28}
               height={28}
@@ -105,7 +105,7 @@ export default function Benefits() {
           {/* 7 */}
           <div className="flex items-start gap-4">
             <Image
-              src="./assets/icons/ai-ml.svg"
+              src="/assets/icons/ai-ml.svg"
               alt="AI ML"
               width={28}
               height={28}
@@ -118,7 +118,7 @@ export default function Benefits() {
           {/* 8 */}
           <div className="flex items-start gap-4">
             <Image
-              src="./assets/icons/Environmental Product.svg"
+              src="/assets/icons/Environmental Product.svg"
               alt="Environmental Sustainability"
               width={28}
               height={28}

@@ -53,7 +53,7 @@ export default function Navbar() {
               <div className="flex items-center justify-center rounded-md px-3 py-2">
                 <div className="bg-black rounded-sm px-2 py-1">
                   <Image
-                    src="./assets/images/storetech-logo-white.png"
+                    src="/assets/images/storetech-logo-white.png"
                     alt="StoreTech Logo"
                     width={160}
                     height={36}

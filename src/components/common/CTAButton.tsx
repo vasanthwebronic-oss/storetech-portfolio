@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 
 type CTAButtonProps = {
@@ -20,11 +19,12 @@ export default function CTAButton({
   className = "",
 }: CTAButtonProps) {
   const base =
-    "w-full py-3 box-content md:w-fit md:px-8 rounded-lg flex justify-center item-center border-2 text-lg font-semibold transition-color duration-500 ";
+    "w-full py-3 box-content md:w-fit md:px-8 rounded-lg flex justify-center items-center border-2 text-lg font-semibold transition-all duration-300 transform ";
   const variants: Record<string, string> = {
     primary:
-      "bg-green-500 text-black hover:bg-black hover:text-white hover:border-white  ",
-    outline: " border-white hover:bg-white hover:text-black",
+      "bg-[#37c659] text-black border-[#37c659] hover:bg-black hover:text-white hover:border-white shadow-sm",
+    outline:
+      "bg-transparent text-white border-white hover:bg-white hover:text-black shadow-sm",
   };
 
   return (
@@ -34,7 +34,7 @@ export default function CTAButton({
       rel={target === "_blank" ? "noopener noreferrer" : undefined}
       aria-label={ariaLabel}
       role="button"
-      className={` ${base} ${variants[variant]} ${className}`}
+      className={`${base} ${variants[variant]} ${className}`}
     >
       {children}
     </a>
