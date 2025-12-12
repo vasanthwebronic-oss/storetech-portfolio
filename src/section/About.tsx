@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AboutCard from "@/components/common/AboutCard";
 
 export default function About() {
@@ -24,7 +24,7 @@ export default function About() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [sectionVisible, setSectionVisible] = useState(false);
 
-  const cardRefs = useRef<Array<HTMLElement | null>>([]);
+  const cardRefs = useRef<(HTMLElement | null)[]>([]);
   const [cardsVisible, setCardsVisible] = useState<boolean[]>(() =>
     new Array(cards.length).fill(false)
   );
@@ -185,7 +185,7 @@ export default function About() {
             <div
               key={item.title}
               data-idx={idx}
-              ref={(el) => (cardRefs.current[idx] = el)}
+              ref={(el) => {cardRefs.current[idx] = el}}
             >
               <AboutCard
                 src={item.src}

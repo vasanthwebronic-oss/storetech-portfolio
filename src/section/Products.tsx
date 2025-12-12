@@ -118,7 +118,7 @@ export default function Products() {
         {/* Product Grid */}
         <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-3">
           {products.map((p, idx) => (
-            <div key={p.title} data-idx={idx} ref={(el) => (cardRefs.current[idx] = el)}>
+            <div key={p.title} data-idx={idx} ref={(el) => {cardRefs.current[idx] = el}}>
               <ProductCard
                 img={p.img}
                 title={p.title}

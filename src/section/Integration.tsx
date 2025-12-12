@@ -88,7 +88,7 @@ export default function Integration() {
             <div
               key={it.title}
               data-idx={idx}
-              ref={(el) => (cardRefs.current[idx] = el)}
+              ref={(el) => {cardRefs.current[idx] = el}}
             >
               <IntegrationCard
                 title={it.title}

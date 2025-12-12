@@ -89,7 +89,7 @@ export default function Workflow() {
                   key={s.id}
                   className="flex items-start gap-6 md:gap-8"
                   data-idx={idx}
-                  ref={(el) => (stepRefs.current[idx] = el)}
+                  ref={(el) => {stepRefs.current[idx] = el}}
                 >
                   <div className="flex flex-col items-center w-28 md:w-24 relative">
                     <div

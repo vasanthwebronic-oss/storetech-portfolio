@@ -111,7 +111,7 @@ export default function Contact() {
               <div
                 key={c.title}
                 data-idx={idx}
-                ref={(el) => (cardRefs.current[idx] = el)}
+                ref={(el) => {cardRefs.current[idx] = el}}
               >
                 <ContactCard
                   href={c.href}

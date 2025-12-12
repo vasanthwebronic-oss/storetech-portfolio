@@ -97,7 +97,7 @@ export default function Vision() {
             <div
               key={c.title}
               data-idx={idx}
-              ref={(el) => (cardRefs.current[idx] = el)}
+              ref={(el) => {cardRefs.current[idx] = el}}
             >
               <VisionCard
                 iconSrc={c.iconSrc}

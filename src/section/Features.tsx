@@ -100,7 +100,7 @@ export default function Features() {
             <div
               key={f.title}
               data-idx={idx}
-              ref={(el) => (cardRefs.current[idx] = el)}
+              ref={(el) => {cardRefs.current[idx] = el}}
             >
               <FeatureCard
                 src={f.src}
