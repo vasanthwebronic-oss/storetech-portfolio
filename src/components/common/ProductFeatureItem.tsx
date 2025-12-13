@@ -13,7 +13,6 @@ export default function ProductFeatureItem({
   index = 0,
   parentVisible = false,
 }: ProductFeatureItemProps & { index?: number; parentVisible?: boolean }) {
-  // per-item stagger delay in ms
   const delayMs = index * 80;
   const style: React.CSSProperties = {
     transitionDelay: parentVisible ? `${delayMs}ms` : "0ms",
@@ -42,7 +41,6 @@ export default function ProductFeatureItem({
             transform 420ms cubic-bezier(0.2, 0.9, 0.28, 1);
         }
 
-        /* icon hover pop */
         .feature-item:hover img {
           transform: translateY(-3px) scale(1.08);
           transition: transform 180ms ease;

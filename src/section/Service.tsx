@@ -89,7 +89,6 @@ export default function Services() {
       id="service"
       className="relative py-32 bg-[#050816] overflow-hidden"
     >
-      {/* Background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(55,198,89,0.12),transparent_60%)]" />
 
       <div className="relative max-w-7xl mx-auto px-6">
@@ -112,7 +111,7 @@ export default function Services() {
               className="
                 group
                 relative
-                perspective-[1200px]
+                perspective-distant
               "
             >
               {/* Card */}
@@ -129,7 +128,7 @@ export default function Services() {
                   transform
                   group-hover:-translate-y-3
                   group-hover:rotate-x-6
-                  group-hover:rotate-y-[-6deg]
+                  group-hover:-rotate-y-6
                   group-hover:shadow-[0_30px_80px_rgba(0,0,0,0.6)]
                 "
               >

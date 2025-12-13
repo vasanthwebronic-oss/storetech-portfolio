@@ -5,7 +5,7 @@ export default function SuccessStories() {
   return (
     <section
       id="success-stories"
-      className="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white"
+      className="relative py-24 bg-linear-to-b from-white via-gray-50 to-white"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -18,15 +18,12 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        {/* Stories */}
         <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* LEFT – 24SJU */}
           <article className="group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300">
-            {/* Map visual */}
             <div className="relative h-56 bg-[#cfe3f6] overflow-hidden">
               <div
                 aria-hidden
-                className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(209,213,219,0.2)_2px,transparent_3px)] bg-[length:90px_90px]"
+                className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(209,213,219,0.2)_2px,transparent_3px)] bg-size-[90px_90px]"
               />
 
               <Pin top="52%" left="28%" />
@@ -60,7 +57,6 @@ export default function SuccessStories() {
             </div>
           </article>
 
-          {/* RIGHT – TANLUX */}
           <article className="group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300">
             {/* Logo */}
             <div className="h-56 bg-black flex items-center justify-center">
@@ -99,7 +95,6 @@ export default function SuccessStories() {
             </div>
           </article>
 
-          {/* Connector icon */}
           <div className="absolute hidden md:flex left-1/2 top-60 -translate-x-1/2 -translate-y-1/2 z-20">
             <div className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center border-4 border-white shadow-xl">
               <svg
@@ -121,7 +116,6 @@ export default function SuccessStories() {
   );
 }
 
-/* --- MAP PIN COMPONENT --- */
 const Pin = ({
   top,
   left,

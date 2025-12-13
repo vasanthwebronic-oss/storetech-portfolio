@@ -94,7 +94,6 @@ export default function Hero() {
       </div>
 
       <style jsx>{`
-        /* reveal line: slide up + fade + slight skew */
         .reveal-line {
           opacity: 0;
           transform: translateY(18px) skewY(-2deg);
@@ -140,7 +139,6 @@ export default function Hero() {
           }
         }
 
-        /* slow floating decorative animation */
         @keyframes floatSlow {
           0% {
             transform: translateY(0px) translateX(0px);
@@ -153,7 +151,6 @@ export default function Hero() {
           }
         }
 
-        /* reduce motion preference support */
         @media (prefers-reduced-motion: reduce) {
           .reveal-line,
           .reveal-sub,

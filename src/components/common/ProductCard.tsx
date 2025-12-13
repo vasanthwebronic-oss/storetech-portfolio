@@ -9,7 +9,7 @@ export type ProductCardProps = {
   subtitle: string;
   features: ProductFeatureItemProps[];
   visible?: boolean;
-  animationDelay?: number; // seconds
+  animationDelay?: number; 
 };
 
 export default function ProductCard({
@@ -20,35 +20,27 @@ export default function ProductCard({
   visible = false,
   animationDelay = 0,
 }: ProductCardProps) {
-  // We'll manage a runtime CSS variable that is the reveal delay.
-  // This variable will be removed (set to "0s") after the reveal finishes
-  // so hover transitions are never affected by the reveal delay.
+  
   const [revealDelay, setRevealDelay] = useState<string>("0s");
 
   useEffect(() => {
-    // reveal duration must match the CSS transition duration below (520ms)
     const revealDurationMs = 520;
 
     if (visible) {
-      // set the delay for reveal (e.g. "0.16s")
       const delayStr = `${animationDelay}s`;
       setRevealDelay(delayStr);
 
-      // clear the delay after revealDuration + animationDelay
       const timeout = window.setTimeout(() => {
         setRevealDelay("0s");
-      }, Math.round(animationDelay * 1000) + revealDurationMs + 20); // +20ms safety
+      }, Math.round(animationDelay * 1000) + revealDurationMs + 20); 
 
       return () => clearTimeout(timeout);
     } else {
-      // if hidden, ensure no stale delay
       setRevealDelay("0s");
     }
   }, [visible, animationDelay]);
 
-  // Apply the CSS variable via inline style
   const style: React.CSSProperties = {
-    // TS needs the cast to allow custom property
     ["--reveal-delay" as any]: revealDelay,
   };
 
@@ -85,14 +77,12 @@ export default function ProductCard({
       </div>
 
       <style jsx>{`
-        /* hidden / visible states for the card using transitions (no keyframes) */
         .pc-hidden {
           opacity: 0;
           transform: translateY(18px) scale(0.995);
           pointer-events: none;
         }
 
-        /* reveal uses the CSS variable --reveal-delay (so hover remains unaffected) */
         .pc-visible {
           opacity: 1;
           transform: translateY(0) scale(1);
@@ -101,7 +91,6 @@ export default function ProductCard({
             transform 520ms cubic-bezier(0.2, 0.9, 0.28, 1) var(--reveal-delay);
         }
 
-        /* Hover / focus for card - explicitly zero delay so it's always snappy */
         :global(article.pc-visible:hover),
         :global(article.pc-visible:focus) {
           transform: translateY(-10px) scale(1.02);
@@ -111,7 +100,6 @@ export default function ProductCard({
             box-shadow 160ms ease 0s;
         }
 
-        /* image inner wrapper handles hover scale/parallax */
         .img-inner {
           position: absolute;
           inset: 0;
@@ -131,7 +119,6 @@ export default function ProductCard({
           pointer-events: none;
         }
 
-        /* accessible: prefer-reduced-motion */
         @media (prefers-reduced-motion: reduce) {
           .pc-visible,
           .pc-hidden,

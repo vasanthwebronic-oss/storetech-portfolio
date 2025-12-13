@@ -64,15 +64,13 @@ export default function Workflow() {
               data-idx={idx}
               className="group flex items-start gap-8"
             >
-              {/* Left column */}
               <div className="flex flex-col items-center w-24">
-                {/* Number */}
                 <div
                   className={`
                     w-16 h-16 rounded-full
                     flex items-center justify-center
                     font-bold text-lg
-                    bg-gradient-to-b from-green-400 to-green-600
+                    bg-linear-to-b from-green-400 to-green-600
                     text-black
                     shadow-lg
                     transition-all duration-300
@@ -87,12 +85,11 @@ export default function Workflow() {
                   {step.id}
                 </div>
 
-                {/* Connector */}
                 {idx !== steps.length - 1 && (
                   <div
                     className={`
-                      w-[2px] mt-4
-                      bg-gradient-to-b from-green-500 to-green-300
+                      w-0.5 mt-4
+                      bg-linear-to-b from-green-500 to-green-300
                       transition-all duration-500 origin-top
                       ${
                         visible[idx + 1]

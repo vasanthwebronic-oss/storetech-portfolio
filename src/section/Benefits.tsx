@@ -56,10 +56,9 @@ export default function Benefits() {
       id="benefits"
       className="
         relative py-24 overflow-hidden
-        bg-gradient-to-b from-gray-50 via-white to-gray-50
+        bg-linear-to-b from-gray-50 via-white to-gray-50
       "
     >
-      {/* Ambient background glow */}
       <div
         aria-hidden
         className="
@@ -100,7 +99,7 @@ export default function Benefits() {
               {/* Icon */}
               <div
                 className="
-                  flex-shrink-0
+                  shrink-0
                   w-12 h-12 rounded-xl
                   bg-green-50
                   flex items-center justify-center

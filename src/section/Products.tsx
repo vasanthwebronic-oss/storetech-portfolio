@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 import ProductCard from "@/components/common/ProductCard"; 
 
 export default function Products() {

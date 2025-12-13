@@ -31,10 +31,9 @@ export default function Partners() {
       id="partners"
       className="
         relative py-28 overflow-hidden
-        bg-gradient-to-b from-gray-50 via-white to-gray-50
+        bg-linear-to-b from-gray-50 via-white to-gray-50
       "
     >
-      {/* Ambient background glow */}
       <div
         aria-hidden
         className="
@@ -57,7 +56,6 @@ export default function Partners() {
           retail.
         </p>
 
-        {/* Partner cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 place-items-center">
           {partners.map((partner, idx) => (
             <a
@@ -79,7 +77,6 @@ export default function Partners() {
               "
               style={{ transitionDelay: `${idx * 80}ms` }}
             >
-              {/* Rotating halo (on hover only) */}
               <span
                 aria-hidden
                 className="
@@ -90,7 +87,7 @@ export default function Partners() {
               >
                 <span
                   className="
-                    absolute inset-[-2px] rounded-3xl
+                    absolute -inset-0.5 rounded-3xl
                     bg-[conic-gradient(from_0deg,rgba(55,198,89,0.4),rgba(55,198,89,0.05),rgba(55,198,89,0.4))]
                     blur-md
                     animate-[spin_6s_linear_infinite]

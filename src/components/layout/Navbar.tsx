@@ -23,7 +23,6 @@ export default function Navbar() {
     { href: "/#contact", label: "Contact", id: "contact" },
   ];
 
-  // lock scroll when menu open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -44,7 +43,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ================= NAVBAR ================= */}
       <header className="fixed top-0 inset-x-0 z-50 bg-black/95 backdrop-blur border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between h-20">
@@ -59,7 +57,6 @@ export default function Navbar() {
               />
             </Link>
 
-            {/* Desktop Nav (LG+) */}
             <nav className="hidden lg:flex items-center gap-10">
               {links.map((l) => (
                 <NavButton
@@ -72,9 +69,7 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* Right Actions */}
             <div className="flex items-center gap-3">
-              {/* Desktop CTA */}
               <button
                 onClick={() => scrollToSection("contact")}
                 className="hidden lg:inline-block bg-[#37c659] text-black px-5 py-2 rounded-lg font-semibold hover:bg-[#2fb84f] transition"
@@ -82,7 +77,6 @@ export default function Navbar() {
                 Get Started
               </button>
 
-              {/* Hamburger (ONLY < LG) */}
               <button
                 onClick={() => setOpen(true)}
                 className="lg:hidden p-2 rounded-md focus-visible:ring-2 focus-visible:ring-[#37c659]"
@@ -97,20 +91,16 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* ================= MOBILE MENU ================= */}
 {open && (
   <>
-    {/* Overlay */}
     <div
-      className="fixed inset-0 z-[60] bg-black/60"
+      className="fixed inset-0 z-60 bg-black/60"
       onClick={() => setOpen(false)}
     />
 
-    {/* Dropdown panel (TOP RIGHT) */}
-    <div className="fixed top-20 right-4 z-[70] w-[92%] max-w-sm">
+    <div className="fixed top-20 right-4 z-70 w-[92%] max-w-sm">
       <div className="rounded-xl bg-black border border-gray-800 shadow-2xl overflow-hidden">
         
-        {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-gray-800">
           <Image
             src="./assets/storetechlogo2.png"
@@ -135,7 +125,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Links */}
         <div className="px-5 py-4 space-y-2">
           {links.map((l) => (
             <button

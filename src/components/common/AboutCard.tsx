@@ -26,7 +26,7 @@ export default function AboutCard({
       className={`
         border-2 border-[#37c659] rounded-xl p-6 min-h-[300px]
         flex flex-col outline-none
-        transition-all duration-[550ms]
+        transition-all duration-550
         motion-reduce:transition-none
         ${visible
           ? "opacity-100 translate-y-0"
