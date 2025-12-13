@@ -1,5 +1,5 @@
 "use client";
-import  { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ContactCard from "@/components/common/ContactCard";
 
 export default function Contact() {
@@ -25,36 +25,33 @@ export default function Contact() {
   ];
 
   const sectionRef = useRef<HTMLElement | null>(null);
-  const cardRefs = useRef<Array<HTMLElement | null>>([]);
+  const cardRefs = useRef<(HTMLElement | null)[]>([]);
   const [sectionVisible, setSectionVisible] = useState(false);
-  const [cardsVisible, setCardsVisible] = useState<boolean[]>(
-    () => new Array(cards.length).fill(false)
+  const [cardsVisible, setCardsVisible] = useState(
+    new Array(cards.length).fill(false)
   );
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const secObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setSectionVisible(true);
-            secObserver.unobserve(entry.target);
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSectionVisible(true);
+          secObserver.disconnect();
+        }
       },
-      { root: null, threshold: 0.12 }
+      { threshold: 0.12 }
     );
-    if (sectionRef.current) secObserver.observe(sectionRef.current);
 
-    if (!("IntersectionObserver" in window)) {
-      setCardsVisible(new Array(cards.length).fill(true));
-      return;
-    }
+    sectionRef.current && secObserver.observe(sectionRef.current);
+
     const cardObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const idx = Number((entry.target as HTMLElement).dataset.idx);
+          const idx = Number(
+            (entry.target as HTMLElement).dataset.idx
+          );
           if (entry.isIntersecting) {
             setCardsVisible((prev) => {
               if (prev[idx]) return prev;
@@ -66,12 +63,10 @@ export default function Contact() {
           }
         });
       },
-      { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0.18 }
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.18 }
     );
 
-    cardRefs.current.forEach((el) => {
-      if (el) cardObserver.observe(el);
-    });
+    cardRefs.current.forEach((el) => el && cardObserver.observe(el));
 
     return () => {
       secObserver.disconnect();
@@ -80,63 +75,54 @@ export default function Contact() {
   }, [cards.length]);
 
   return (
-    <section id="contact" className="py-20" ref={sectionRef}>
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2
-              className={`section-title text-3xl sm:text-5xl font-bold mb-4 transition-all transform ${
-                sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-              }`}
-              style={{ transitionDelay: sectionVisible ? "0s" : "0s" }}
-            >
-              Ready to Transform <span className="text-green-400">Your Business?</span>
-            </h2>
+    <section id="contact" ref={sectionRef} className="py-20">
+      <div className="container mx-auto px-20">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <h2
+            className={`
+              text-3xl sm:text-5xl font-bold mb-4 transition-all duration-700
+              motion-reduce:transition-none
+              ${sectionVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-6"}
+            `}
+          >
+            Ready to Transform{" "}
+            <span className="text-green-400">Your Business?</span>
+          </h2>
 
-            <p
-              className={`section-subtitle text-[1.30rem] max-w-3xl text-gray-700 mx-auto leading-relaxed transition-all transform ${
-                sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-              }`}
-              style={{ transitionDelay: "0.08s" }}
-            >
-              The future of physical commerce is not a distant dream; it is a reality being built
-              today. StoreTech is at the forefront of this transformation, providing the tools and
-              expertise needed to create a new generation of smart, efficient, and profitable
-              physical spaces.
-            </p>
-          </div>
+          <p
+            className={`
+              text-[1.30rem] text-gray-700 leading-relaxed max-w-3xl mx-auto
+              transition-all duration-700 delay-100
+              motion-reduce:transition-none
+              ${sectionVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-6"}
+            `}
+          >
+            The future of physical commerce is not a distant dream; it is a
+            reality being built today. StoreTech is at the forefront of this
+            transformation.
+          </p>
+        </div>
 
-          <div className="grid gap-6 md:grid-cols-3 mb-12">
-            {cards.map((c, idx) => (
-              <div
-                key={c.title}
-                data-idx={idx}
-                ref={(el) => {cardRefs.current[idx] = el}}
-              >
-                <ContactCard
-                  href={c.href}
-                  imgSrc={c.imgSrc}
-                  title={c.title}
-                  text={c.text}
-                  visible={cardsVisible[idx]}
-                  animationDelay={0.08 * idx}
-                />
-              </div>
-            ))}
-          </div>
+        <div className="grid gap-6 lg:grid-cols-3">
+          {cards.map((c, idx) => (
+            <div
+              key={c.title}
+              data-idx={idx}
+              ref={(el) => {cardRefs.current[idx] = el}}
+            >
+              <ContactCard
+                {...c}
+                visible={cardsVisible[idx]}
+                animationDelay={0.08 * idx}
+              />
+            </div>
+          ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @media (prefers-reduced-motion: reduce) {
-          .section-title,
-          .section-subtitle {
-            transition: none !important;
-            transform: none !important;
-            opacity: 1 !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

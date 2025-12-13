@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+
 import { useRouter } from "next/navigation";
 
 export default function Footer() {
@@ -30,7 +30,7 @@ export default function Footer() {
             >
               <div className="logo-icon-bg rounded-sm flex items-center justify-center bg-black">
                 <Image
-                  src="./assets/images/storetech-logo-white.png"
+                  src="./assets/storetechlogo2.png"
                   alt="StoreTech Logo"
                   width={160}
                   height={50}
@@ -52,6 +52,7 @@ export default function Footer() {
                 { id: "features", label: "Features" },
                 { id: "products", label: "Products" },
                 { id: "industries", label: "Industries" },
+                { id: "service", label: "Service" },
                 { id: "contact", label: "Contact" },
               ].map((item) => (
                 <button

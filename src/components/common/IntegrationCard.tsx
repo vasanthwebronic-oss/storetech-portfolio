@@ -20,7 +20,7 @@ export default function IntegrationCard({
   animationDelay = 0,
 }: IntegrationCardProps) {
   const style: React.CSSProperties = {
-    animationDelay: `${animationDelay}s`,
+    ["--reveal-delay" as any]: visible ? `${animationDelay}s` : "0s",
   };
 
   return (
@@ -55,38 +55,30 @@ export default function IntegrationCard({
       </div>
 
       <style jsx>{`
-        /* hidden: ready state (no motion) */
         .ic-hidden {
           opacity: 0;
           transform: translateY(18px) scale(0.996);
+          pointer-events: none;
         }
 
-        /* visible: entrance */
         .ic-visible {
-          animation: icIn 520ms cubic-bezier(0.2, 0.9, 0.28, 1) forwards;
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          transition:
+            opacity 520ms ease-out var(--reveal-delay),
+            transform 520ms cubic-bezier(0.2, 0.9, 0.28, 1) var(--reveal-delay);
         }
 
-        @keyframes icIn {
-          from {
-            opacity: 0;
-            transform: translateY(18px) scale(0.996);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-
-        /* hover / focus micro-interaction (only after visible) */
         .ic-visible:hover,
         .ic-visible:focus-within {
-          transform: translateY(-8px) rotate(-0.6deg) scale(1.01);
-          box-shadow: 0 20px 40px rgba(2, 6, 23, 0.14);
-          transition: transform 300ms cubic-bezier(0.2, 0.9, 0.28, 1),
-            box-shadow 300ms ease;
+          transform: translateY(-8px)  scale(1.01);
+          
+          /* ensure hover has zero delay so it is always snappy */
+          transition:
+            transform 220ms cubic-bezier(0.2, 0.9, 0.28, 1) 0s,
+            box-shadow 220ms ease 0s;
         }
 
-        /* subtle sheen that moves across the card on hover */
         .ic-visible:hover::after,
         .ic-visible:focus-within::after {
           content: "";
@@ -102,11 +94,10 @@ export default function IntegrationCard({
           to { transform: translateX(100%); }
         }
 
-        /* accessibility: respect reduced motion */
         @media (prefers-reduced-motion: reduce) {
           .ic-visible,
           .ic-hidden {
-            animation: none !important;
+            transition: none !important;
             transform: none !important;
             opacity: 1 !important;
           }

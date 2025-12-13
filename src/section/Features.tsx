@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FeatureCard from "@/components/common/FeatureCard2";
 
 type FeatureItem = {

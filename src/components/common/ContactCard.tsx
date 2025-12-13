@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import React from "react";
 
 export type ContactCardProps = {
   href: string;
@@ -9,8 +8,8 @@ export type ContactCardProps = {
   text: string;
   alt?: string;
   className?: string;
-  visible?: boolean; 
-  animationDelay?: number; 
+  visible?: boolean;
+  animationDelay?: number;
 };
 
 export default function ContactCard({
@@ -23,87 +22,71 @@ export default function ContactCard({
   visible = false,
   animationDelay = 0,
 }: ContactCardProps) {
-  const style: React.CSSProperties = { animationDelay: `${animationDelay}s` };
-
   return (
     <div
-      className={`bg-gray-100 rounded-xl p-6 text-center transform will-change-transform ${
-        visible ? "cc-visible" : "cc-hidden"
-      } ${className}`}
-      style={style}
       tabIndex={0}
       aria-label={title}
+      style={{ transitionDelay: `${animationDelay}s` }}
+      className={`
+        bg-gray-100 rounded-2xl 
+        max-h-[250px] px-3 py-4
+        flex flex-col justify-between text-center
+        transition-all duration-520
+        motion-reduce:transition-none
+        will-change-transform
+        ${visible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-4 pointer-events-none"}
+        hover:-translate-y-2 hover:shadow-2xl
+        focus-within:-translate-y-2 focus-within:shadow-2xl
+        ${className}
+      `}
     >
       <a
         href={href}
-        className="flex flex-col items-center text-black no-underline focus:outline-none"
+        className="flex flex-col items-center h-full text-black focus:outline-none"
       >
-        <div className="mb-4 relative group">
-          <div className="inline-block rounded-lg bg-white/20 p-2">
-            <Image src={imgSrc} alt={alt ?? title} width={50} height={50} />
+        {/* Icon */}
+        <div className="mb-6 relative group">
+          <div
+            className="
+              inline-flex rounded-xl p-4 bg-white/30
+              transition-transform duration-300 ease-out
+              group-hover:-translate-y-1 group-hover:scale-110
+              group-focus-within:-translate-y-1 group-focus-within:scale-110
+            "
+          >
+            <Image
+              src={imgSrc}
+              alt={alt ?? title}
+              width={52}
+              height={52}
+            />
           </div>
 
           <span
             aria-hidden
-            className="absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300"
+            className="
+              absolute inset-0 rounded-xl pointer-events-none
+              opacity-0 group-hover:opacity-100 group-focus-within:opacity-100
+              transition-opacity duration-300
+            "
             style={{
-              boxShadow: "0 8px 30px rgba(16, 185, 129, 0.12)",
+              boxShadow: "0 10px 36px rgba(16, 185, 129, 0.14)",
             }}
           />
         </div>
 
-        <h3 className="font-bold text-lg mb-2">{title}</h3>
-        <p className="text-gray-800 text-md">{text}</p>
+        {/* Text content */}
+        <div className="flex flex-col grow justify-start">
+          <h3 className="font-bold text-xl mb-3">{title}</h3>
+          <p className="text-gray-800 text-base leading-relaxed">
+            {text}
+          </p>
+        </div>
+
+       
       </a>
-
-      <style jsx>{`
-        /* hidden state */
-        .cc-hidden {
-          opacity: 0;
-          transform: translateY(18px) scale(0.995);
-        }
-
-        /* visible: entrance animation */
-        .cc-visible {
-          animation: ccIn 520ms cubic-bezier(0.2, 0.9, 0.28, 1) forwards;
-        }
-
-        @keyframes ccIn {
-          from {
-            opacity: 0;
-            transform: translateY(18px) scale(0.995);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-
-        /* hover/focus lift + shadow */
-        .cc-visible:hover,
-        .cc-visible:focus-within {
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 20px 40px rgba(2, 6, 23, 0.08);
-        }
-
-        /* image/icon pop on hover/focus */
-        .cc-visible .group:hover img,
-        .cc-visible .group:focus-within img {
-          transform: translateY(-4px) scale(1.08);
-          transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        /* accessibility: reduce motion */
-        @media (prefers-reduced-motion: reduce) {
-          .cc-visible,
-          .cc-hidden {
-            animation: none !important;
-            transition: none !important;
-            transform: none !important;
-            opacity: 1 !important;
-          }
-        }
-      `}</style>
     </div>
   );
 }

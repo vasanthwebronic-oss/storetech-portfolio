@@ -15,16 +15,14 @@ export default function NavButton({
   onClick,
   className = "",
 }: NavButtonProps) {
-  const base = "text-[18px] font-bold cursor-pointer transition";
-  const activeClasses = isActive
-    ? "text-[#37c659]"
-    : "text-gray-300 hover:text-white";
-
   return (
     <button
-      type="button"
       onClick={() => onClick?.(id)}
-      className={`${base} ${activeClasses} ${className}`}
+      className={`
+        text-[18px] font-semibold cursor-pointer transition-colors duration-300
+        ${isActive ? "text-[#37c659]" : "text-gray-300 hover:text-white"}
+        ${className}
+      `}
     >
       {label}
     </button>

@@ -4,7 +4,7 @@ import React from "react";
 type IntegrationTagProps = {
   children: React.ReactNode;
   className?: string;
-  animationDelay?: number; // seconds
+  animationDelay?: number; 
   parentVisible?: boolean;
 };
 
@@ -15,7 +15,7 @@ export default function IntegrationTag({
   parentVisible = false,
 }: IntegrationTagProps) {
   const style: React.CSSProperties = {
-    animationDelay: `${animationDelay}s`,
+    ["--reveal-delay" as any]: parentVisible ? `${animationDelay}s` : "0s",
   };
 
   return (
@@ -31,32 +31,23 @@ export default function IntegrationTag({
         .it-hidden {
           opacity: 0;
           transform: translateY(8px) scale(0.98);
-        }
-        .it-visible {
-          animation: itIn 420ms cubic-bezier(0.2, 0.9, 0.28, 1) forwards;
-        }
-        @keyframes itIn {
-          from {
-            opacity: 0;
-            transform: translateY(8px) scale(0.98);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
+          pointer-events: none;
         }
 
-        .it-visible:hover,
-        .it-visible:focus {
-          transform: translateY(-4px) scale(1.03);
-          box-shadow: 0 8px 20px rgba(2,6,23,0.06);
-          transition: transform 260ms cubic-bezier(0.22,1,0.36,1), box-shadow 260ms ease;
+        .it-visible {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          transition:
+            opacity 420ms ease var(--reveal-delay),
+            transform 420ms cubic-bezier(0.2, 0.9, 0.28, 1) var(--reveal-delay);
         }
+
+       
 
         @media (prefers-reduced-motion: reduce) {
           .it-visible,
           .it-hidden {
-            animation: none !important;
+            transition: none !important;
             transform: none !important;
             opacity: 1 !important;
           }

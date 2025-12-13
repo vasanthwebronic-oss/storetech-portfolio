@@ -8,6 +8,7 @@ import Industries from "@/section/Industries";
 import Integration from "@/section/Integration";
 import Partners from "@/section/Partners";
 import Products from "@/section/Products";
+import Service from "@/section/Service";
 import Success_Stories from "@/section/Success_Stories";
 import Support from "@/section/Support";
 import Vision from "@/section/Vision";
@@ -27,6 +28,7 @@ export default function page() {
       <Success_Stories />
       <Partners />
       <Industries />
+      <Service />
       <Integration />
       <Support />
       <Faq />

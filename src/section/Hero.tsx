@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import CTAButton from "@/components/common/CTAButton";
 import FeatureCard from "@/components/common/FeatureCard";
 
