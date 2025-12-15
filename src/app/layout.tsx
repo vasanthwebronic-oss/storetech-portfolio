@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "StoreTech delivers autonomous retail, IoT, AI-powered automation, and smart commerce solutions.",
   icons: {
-    icon: "/favicon.png", 
+    icon: "./favicon.png", 
     
   },
 };
