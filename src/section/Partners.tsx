@@ -65,7 +65,7 @@ export default function Partners() {
               rel="noopener noreferrer"
               aria-label={partner.alt}
               className="
-                group relative
+                group relative overflow-hidden z-10
                 w-48 h-48
                 rounded-3xl
                 bg-white/70 backdrop-blur
@@ -102,7 +102,7 @@ export default function Partners() {
                 width={120}
                 height={120}
                 className="
-                  relative z-10
+                  relative z-50
                   object-contain
                   grayscale
                   transition-all duration-300 ease-out

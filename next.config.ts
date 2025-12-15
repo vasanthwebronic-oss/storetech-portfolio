@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: "/storetech-portfolio",
+ 
+ basePath: "/storetech-portfolio",
   output: "export",
-
  
 };
 

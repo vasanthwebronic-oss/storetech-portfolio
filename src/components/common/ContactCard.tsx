@@ -28,7 +28,7 @@ export default function ContactCard({
       aria-label={title}
       style={{ transitionDelay: `${animationDelay}s` }}
       className={`
-        bg-gray-100 rounded-2xl 
+        bg-gray-100 rounded-2xl h-[300px]
         max-h-[250px] px-3 py-4
         flex flex-col justify-between text-center
         transition-all duration-520
