@@ -49,7 +49,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/#hero" className="flex items-center">
               <Image
-                src="./assets/storetechlogo2.png"
+                src="./assets/images/storetech-logo-black.png"
                 alt="StoreTech Logo"
                 width={140}
                 height={34}
